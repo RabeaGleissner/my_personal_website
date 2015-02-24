@@ -32,10 +32,11 @@ p {
   font-size: 1em;
 }
 
-.home {
+.home, .about {
   width: 100%;
   height: 100%;
 }
+
 #pink_ball {
   width: 400px;
   height: 400px;
