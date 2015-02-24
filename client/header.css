@@ -1,0 +1,31 @@
+nav ul {
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 auto;
+  padding-right: 10px;
+}
+
+nav li:last-child {
+  padding-right: 0px;
+} 
+
+nav a {
+  text-decoration:none;
+  color:black;
+  display: inline-block;
+  padding-bottom: 1px;
+}
+
+nav a:hover {
+  color:deeppink;
+  border-bottom: 2px solid deeppink;
+}
+
+.hide {
+  display:none;
+}
