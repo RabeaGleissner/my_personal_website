@@ -18,15 +18,21 @@
           {{#each projects}}
             <article class="project-item">
               <h2>{{title}}</h2>
+            <div class="project-image-urls clearfix">
               <img class="project-screenshot" src="{{image}}" alt="Screenshot of project">
-              <p>{{intro}}</p>
-               <p><a href="{{heroku}}">{{heroku}}</a></p> 
-               <p><a href="{{github}}">Code on Github</a></p>
-               <p>{{description}}</p>
+               <span class="project-intro">
+               <p>{{intro}}</p>
+               </span>
+              </div>
+              <p><a href="{{heroku}}">Go to the live website</a></p> 
+              <p><a href="{{github}}">Check out the code on Github</a></p>              
+               <p class="project-description hide">{{description}}</p>
             </article>
           {{/each}}
         </div>
+      <div id="portfolio-wrapper">
         <p>If you're interested in seeing some more of my code, check my <a href="https://github.com/RabeaGleissner" target="_blank">Github account</a>.</p>
+      </div>
     </div>
   </div>
   {{> contact}}
