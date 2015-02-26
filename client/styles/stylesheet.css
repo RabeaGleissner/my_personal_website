@@ -3,7 +3,7 @@ html {
 }
 
 body {
- font-family: 'Roboto', sans-serif;
+ font-family: 'roboto', sans-serif;
  color:black;
  font-size: 18px;
  height: 100%;
@@ -69,8 +69,15 @@ p a:hover{
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  justify-content: center;
+  flex-flow: center;
+  -webkit-box-flow: center;
+  -moz-box-flow: center;
+  -ms-flexbox-flow: center;
+  -webkit-flex-flow: center;
   align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
 }
 
 #intro {
@@ -129,8 +136,23 @@ p a:hover{
   display: -ms-flexbox;
   display: -webkit-flex;
   flex-wrap: wrap;
+  -webkit-box-wrap: wrap;
+  -moz-box-wrap: wrap;
+  -ms-flexbox-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
   flex-flow: center;
+  -webkit-box-flow: center;
+  -moz-box-flow: center;
+  -ms-flexbox-flow: center;
+  -webkit-flex-flow: center;
+
+
   justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+
 }
 
 .wrapper {
@@ -139,9 +161,10 @@ p a:hover{
 }
 
 #portfolio-wrapper {
-  text-align: center;
+  text-align: justify;
   max-width: 75%;
   margin: 0 auto;
+
 }
 
 .project-item {
@@ -165,6 +188,10 @@ img#project-screenshot {
   margin-left: 10px;
 }
 
+img#project-screenshot:hover {
+ cursor:pointer;
+}
+
 
 p.project-description.hide {
   visibility: hidden;
@@ -178,11 +205,11 @@ p.project-description {
   text-align: center;
 }
 
-.social #twitter:hover, #instagram:hover, #linkedin:hover, #github:hover, #flickr:hover {
+/*.social #twitter:hover, #instagram:hover, #linkedin:hover, #github:hover, #flickr:hover {
   background-color:white;
   background-color: deeppink;
 }
-
+*/
 
 @media screen and (min-width:601px) {
 
@@ -200,11 +227,16 @@ p.project-description {
 
 
 
-@media screen and (max-width:600px) {
+@media only screen and (max-width:600px)  { 
+
+  body {
+    font-size: 16px;
+  }
 
 h1 {
   line-height: 1.2em;
 }
+
   .project-image-intro {
     height:230px;
   }
@@ -213,10 +245,12 @@ h1 {
     }
 
   img#project-screenshot {
-   display:block;
+    display:block;
     margin: 0 auto;
     margin-left: none;
+
   }
+
 
   .project-intro {
     float: none;
@@ -226,4 +260,44 @@ h1 {
 
   }
   }
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    display:none;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: 1em;
+  }
+
+  #pink_ball {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about_text {
+    padding-right: 0px;
+  }
+
+  #portfolio-wrapper {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.0em;
+    line-height: 1em;
+
+  }
+
+  .project-item {
+    padding: 0px;
+    
+  }
+
+}
 
