@@ -18,6 +18,7 @@ h1 {
 
 h2 {
   font-size: 1.5em;
+  line-height: 1em;
 }
 
 h2 a {
@@ -140,7 +141,7 @@ p a:hover{
 
 #portfolio-wrapper {
   text-align: center;
-  max-width: 90%;
+  max-width: 75%;
   margin: 0 auto;
 }
 
@@ -148,19 +149,19 @@ p a:hover{
   max-width: 500px;
   min-width: 380px;
   background-color: #f6f6f6;
-  margin: 5px;
+  margin: 7px;
   padding-left: 20px;
   padding-right: 20px;
-  overflow: hidden;
-}
+/*  overflow: hidden;
+*/}
 
 .project-item h2 {
   text-align: center;
 }
 
-.project-image-urls {
-  height:170px;
-}
+
+
+
 
 img.project-screenshot {
   max-width: 150px;
@@ -169,12 +170,7 @@ img.project-screenshot {
   padding-left: 10px;
 }
 
-.project-intro {
-  float: right;
-  max-width: 250px;
-  vertical-align: middle;
-  padding-left: 20px;
-}
+
 
 p.project-description.hide {
   visibility: hidden;
@@ -184,17 +180,57 @@ p.project-description {
   visibility: visible;
 }
 
-@media screen and (min-width:961px) {
+.urls {
+  text-align: center;
+}
+
+@media screen and (min-width:601px) {
 
 
-
-
+  .project-image-intro {
+    height:170px;
   }
 
 
-/* iPhone 5 */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px) {
-/* STYLES GO HERE */
+
+  .project-intro {
+    float: right;
+    max-width: 250px;
+    vertical-align: middle;
+    padding-left: 20px;
+  }
+
 }
+
+
+
+@media screen and (max-width:600px) {
+
+
+h1 {
+  line-height: 1.2em;
+}
+  .project-image-intro {
+    height:230px;
+  }
+
+    .urls {
+      display: block;
+    }
+
+
+  img.project-screenshot {
+    display:block;
+    text-align: center;
+  }
+
+  .project-intro {
+    float: none;
+    max-width: 350px;
+    display: block;
+    text-align: center;
+
+  }
+
+  }
+
