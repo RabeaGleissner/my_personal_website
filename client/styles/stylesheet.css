@@ -12,7 +12,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  line-height: 2em;
+  line-height: 1em;
   text-align: center;
 }
 
@@ -27,8 +27,8 @@ h2 a {
 }
 
 h3 {
-  font-size: 1.25em;
-  line-height: 1.4em;
+  font-size: 1.2em;
+  line-height: 0.5em;
 }
 h4 {
   font-size: 1.1em;
@@ -89,7 +89,6 @@ p a:hover{
 #about_wrapper {
   max-width: 90%;
   margin: 0 auto;
-  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -152,24 +151,19 @@ p a:hover{
   margin: 7px;
   padding-left: 20px;
   padding-right: 20px;
-/*  overflow: hidden;
-*/}
+}
 
 .project-item h2 {
   text-align: center;
 }
 
 
-
-
-
-img.project-screenshot {
+img#project-screenshot {
   max-width: 150px;
   min-width: 100px;
   border-radius: 100%;
-  padding-left: 10px;
+  margin-left: 10px;
 }
-
 
 
 p.project-description.hide {
@@ -184,14 +178,17 @@ p.project-description {
   text-align: center;
 }
 
-@media screen and (min-width:601px) {
+.social #twitter:hover, #instagram:hover, #linkedin:hover, #github:hover, #flickr:hover {
+  background-color:white;
+  background-color: deeppink;
+}
 
+
+@media screen and (min-width:601px) {
 
   .project-image-intro {
     height:170px;
   }
-
-
 
   .project-intro {
     float: right;
@@ -199,13 +196,11 @@ p.project-description {
     vertical-align: middle;
     padding-left: 20px;
   }
-
 }
 
 
 
 @media screen and (max-width:600px) {
-
 
 h1 {
   line-height: 1.2em;
@@ -213,15 +208,14 @@ h1 {
   .project-image-intro {
     height:230px;
   }
-
     .urls {
       display: block;
     }
 
-
-  img.project-screenshot {
-    display:block;
-    text-align: center;
+  img#project-screenshot {
+   display:block;
+    margin: 0 auto;
+    margin-left: none;
   }
 
   .project-intro {
@@ -231,6 +225,5 @@ h1 {
     text-align: center;
 
   }
-
   }
 
