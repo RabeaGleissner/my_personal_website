@@ -1,20 +1,32 @@
+
 Template.body.events({
+
   "click #read-more": function (event) {
   event.preventDefault();
-  console.log('clicked');
-
   var $this = $(event.target);
-      
-  console.log($this.parent());
-  
-  $($this).parent().parent().parent().parent().addClass('active');
 
-  showDescription();
+  $(".project-item.active").removeClass('active');
+
+  var activeArticle = $($this).parent().parent().parent().parent();
+  activeArticle.addClass('active');
+
+  toggleDescription();
+  changeLinkText();
 
   }
+
 });
 
+function toggleDescription(){
+      $(".project-item.active p").last().slideToggle('fast'); 
+}
 
-function showDescription() {
-    $(".project-item.active p").last().toggleClass( "hide" );
+function changeLinkText(){
+  if ( $(".project-item.active a").first().text() == ("Read more")){
+  
+    $(".project-item.active a").first().text('Read less');
+  } else {
+ 
+    $(".project-item.active a").first().text('Read more');
+  }
 }

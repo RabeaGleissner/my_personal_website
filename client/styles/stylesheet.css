@@ -166,8 +166,7 @@ p a:hover{
 }
 
 .project-item {
-  max-width: 500px;
-  min-width: 380px;
+  width: 430px;
   background-color: #f6f6f6;
   margin: 7px;
   padding-left: 20px;
@@ -187,12 +186,10 @@ img#project-screenshot {
 }
 
 
-p.project-description.hide {
-  visibility: hidden;
-}
+
 
 p.project-description {
-  visibility: visible;
+  display:none;
 }
 
 .urls {
