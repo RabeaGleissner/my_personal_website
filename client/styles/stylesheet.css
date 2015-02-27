@@ -200,11 +200,54 @@ p.project-description {
   text-align: center;
 }
 
-/*.social #twitter:hover, #instagram:hover, #linkedin:hover, #github:hover, #flickr:hover {
-  background-color:white;
-  background-color: deeppink;
+.social {
+  margin-top: 20px;
 }
-*/
+
+/*social media icons*/
+#twitter, #instagram, #linkedin, #github, #flickr {
+  background-position: center;
+  background-size: 45px;
+  width:45px;
+  height:45px;
+}
+#twitter {
+  background-image: url("images/twitter.png");
+}
+#twitter:hover {
+  background-image: url("images/twitter-pink.png");
+  cursor: pointer;
+}
+#instagram {
+  background-image: url("images/instagram.png");
+}
+#instagram:hover {
+  background-image: url("images/instagram-pink.png");
+  cursor: pointer;
+}
+
+#linkedin {
+  background-image: url("images/linkedin.png");
+}
+#linkedin:hover {
+  background-image: url("images/linkedin-pink.png");
+  cursor: pointer;
+}
+#github {
+  background-image: url("images/github.png");
+}
+#github:hover {
+  background-image: url("images/github-pink.png");
+  cursor: pointer;
+}
+#flickr {
+  background-image: url("images/flickr.png");
+}
+#flickr:hover {
+  background-image: url("images/flickr-pink.png");
+  cursor: pointer;
+}
+
 
 @media screen and (min-width:601px) {
 
@@ -261,10 +304,6 @@ h1 {
     font-size: 14px;
   }
 
-  nav {
-    display:none;
-  }
-
   h2 {
     font-size: 1.3em;
     line-height: 1em;
@@ -295,6 +334,10 @@ h1 {
 
   #rabea_photo {
    display: none;
+  }
+  nav a:hover {
+    color:black;
+    border-bottom: none;
   }
 
 }

@@ -23,11 +23,7 @@ nav a {
   display: inline-block;
 }
 
-nav a:hover {
+nav a:hover, a#active {
   color:deeppink;
   border-bottom: 2px solid deeppink;
-}
-
-.hide {
-  display:none;
 }
