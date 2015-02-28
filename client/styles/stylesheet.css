@@ -23,8 +23,9 @@ h2 {
 
 h2 a {
   text-decoration: underline;
-  color:white;
+ color:white;
 }
+
 
 h3 {
   font-size: 1.2em;
@@ -63,7 +64,8 @@ p a:hover{
   border-radius:100%;
   background-color: deeppink;
   margin: 0 auto;
-  margin-top: 40px;
+  vertical-align: middle;
+  margin-top: 8%;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -83,9 +85,10 @@ p a:hover{
 #intro {
   color:white;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   text-align: center;
 }
+
 
 #about {
   position: relative;
@@ -212,39 +215,39 @@ p.project-description {
   height:45px;
 }
 #twitter {
-  background-image: url("images/twitter.png");
+  background-image: url("images/social/twitter.png");
 }
 #twitter:hover {
-  background-image: url("images/twitter-pink.png");
+  background-image: url("images/social/twitter-pink.png");
   cursor: pointer;
 }
 #instagram {
-  background-image: url("images/instagram.png");
+  background-image: url("images/social/instagram.png");
 }
 #instagram:hover {
-  background-image: url("images/instagram-pink.png");
+  background-image: url("images/social/instagram-pink.png");
   cursor: pointer;
 }
 
 #linkedin {
-  background-image: url("images/linkedin.png");
+  background-image: url("images/social/linkedin.png");
 }
 #linkedin:hover {
-  background-image: url("images/linkedin-pink.png");
+  background-image: url("images/social/linkedin-pink.png");
   cursor: pointer;
 }
 #github {
-  background-image: url("images/github.png");
+  background-image: url("images/social/github.png");
 }
 #github:hover {
-  background-image: url("images/github-pink.png");
+  background-image: url("images/social/github-pink.png");
   cursor: pointer;
 }
 #flickr {
-  background-image: url("images/flickr.png");
+  background-image: url("images/social/flickr.png");
 }
 #flickr:hover {
-  background-image: url("images/flickr-pink.png");
+  background-image: url("images/social/flickr-pink.png");
   cursor: pointer;
 }
 
