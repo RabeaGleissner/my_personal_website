@@ -1,9 +1,10 @@
 Template.body.events({
 
-  "mouseenter #enter": function () {
+  "mouseup #enter": function () {
   console.log('ev def');
 
-  $("nav").addClass('top');
+  $("nav").slideDown(1000);
+  $("nav").addClass('fixed');
 
   }
 
