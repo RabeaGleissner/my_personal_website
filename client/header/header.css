@@ -45,8 +45,13 @@ nav a#home-nav {
   color:deeppink;
 }
 
-nav a:hover, a#active {
+nav a:hover {
   color:deeppink;
+  border-bottom: 2px solid deeppink;
+}
+
+nav a.active {
+  color:black;
   border-bottom: 2px solid deeppink;
 }
 
