@@ -3,6 +3,7 @@ Template.body.events({
 
   "click #read-more": function (event) {
   event.preventDefault();
+  console.log('works');
   var $this = $(event.target);
 
   $(".project-item.active").removeClass('active');

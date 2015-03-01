@@ -1,5 +1,12 @@
 nav {
   min-height: 70px;
+  z-index: 1;
+}
+
+
+nav.top {
+  position:fixed;
+  top: 0px;
 }
 
 nav ul {

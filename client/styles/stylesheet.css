@@ -23,7 +23,7 @@ h2 {
 
 h2 a {
   text-decoration: underline;
- color:white;
+  color:white;
 }
 
 
@@ -56,6 +56,10 @@ p a:hover{
 #home, #about, #contact, #projects {
   min-width: 100%;
   min-height: 100%;
+}
+
+#about, #contact, #projects {
+  padding-top:5%;
 }
 
 #pink_ball {
@@ -95,7 +99,7 @@ p a:hover{
 #about_wrapper {
   max-width: 90%;
   margin: 0 auto;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .about_text {
@@ -159,6 +163,7 @@ p a:hover{
 .wrapper {
   max-width: 90%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 #portfolio-wrapper {

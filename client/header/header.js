@@ -1,16 +1,10 @@
-// $(function() {
+Template.body.events({
 
-// // displaying nav on scroll and click
+  "mouseenter #enter": function () {
+  console.log('ev def');
 
-//   $(window).scroll(function(){
-//     var scroll = $(window).scrollTop();
-//     if (scroll >= 500) {
-//             $("nav").removeClass("hide");
-//         }
-//   });
+  $("nav").addClass('top');
 
-//   $('#enter').click(function(){
-//       $("nav").removeClass("hide");
-//   });
-  
-//   });
+  }
+
+});
