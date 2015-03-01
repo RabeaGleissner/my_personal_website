@@ -6,6 +6,12 @@ Template.body.events({
   $("nav").slideDown(1000);
   $("nav").addClass('fixed');
 
+  },
+
+  "mouseup #home-nav": function () {
+  $("nav").slideUp(1000);
+  $("nav").removeClass('fixed');
+
   }
 
 });
