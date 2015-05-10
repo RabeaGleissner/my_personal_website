@@ -31,3 +31,10 @@ function changeLinkText(){
     $(".project-item.active a").first().text('Read more');
   }
 }
+
+$(function(){
+        $(".typed-effect").typed({
+            strings: ["Hello, ^700 my name is Rabea..."],
+            typeSpeed: 0.2
+        });
+    });
