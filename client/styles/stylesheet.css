@@ -218,6 +218,9 @@ p.project-description {
     font-size: 2.3em;
     line-height: 1.2em;
   }
+  .about_text {
+    padding-right: 0px;
+  }
   .project-image-intro {
     height:220px;
   }
@@ -254,9 +257,6 @@ p.project-description {
     font-size: 1.3em;
     line-height: 1em;
   }
-  .about_text {
-    padding-right: 0px;
-  }
   #portfolio-wrapper {
     max-width: 100%;
   }
@@ -268,13 +268,12 @@ p.project-description {
     max-width: 80%;
     margin: 0 auto;
   }
-  .about_content {
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-  }
   #rabea_photo {
-    display:none;
+    background-size: 150px;
+     width:150px;
+     height:150px;
+     margin-left: none;
+     margin-right: none;
   }
   nav a:hover {
     color:black;

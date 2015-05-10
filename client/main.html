@@ -8,31 +8,7 @@
   <link rel="icon" href="images/favicon.png" type="image/png">
   <title>Rabea Gleissner</title>
 </head>
-
 <body>
-  {{> header}}
-  {{> about}}
-  <div id="projects">
-      <div class="wrapper">
-        {{> portfolio}}
-        <div id="projects-flex">
-          {{#each projects}}
-            <article class="project-item">
-              <h2>{{title}}</h2>
-            <div class="project-image-intro clearfix">
-              <img id="project-screenshot" src="{{image}}" alt="Screenshot of project">
-               <span class="project-intro">
-               <p>{{intro}}</p>
-               <p><a href="#" id="read-more">Read more</a></p>
-               </span>
-              </div>
-              <p class="urls"><a href="{{heroku}}"  target="_blank">Live website</a> | <a href="{{github}}" target="_blank">Code on Github</a></p>                 
-            <p class="project-description ">{{description}}</p>
-            </article>
-          {{/each}}
-        </div>
-      
-    </div>
-  </div>
-  {{> contact}}
+ {{> header}}
+ {{> yield}}
 </body>
