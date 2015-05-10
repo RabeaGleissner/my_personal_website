@@ -1,65 +1,51 @@
 html {
   height: 100%;
 }
-
 body {
  font-family: 'roboto', sans-serif;
  color:black;
  font-size: 18px;
  height: 100%;
-
 }
-
 h1 {
   font-size: 2.5em;
   line-height: 1em;
   text-align: center;
 }
-
 h2 {
   font-size: 1.5em;
   line-height: 1em;
 }
-
 h2 a {
   text-decoration: underline;
   color:white;
 }
-
-
 h3 {
   font-size: 1.2em;
   line-height: 0.5em;
 }
-
 nav h3 {
   line-height: 0em;
   font-size: 1em;
   display: inline-block;
 }
-
 h4 {
   font-size: 1.1em;
   line-height: 1.3em;
 }
-
 p {
   font-size: 1em;
 }
-
 p a{
   text-decoration: none;
   color: deeppink;
 }
-
 p a:hover{
   text-decoration: underline;
 }
-
 .clearfix {
   clear:both;
 }
-
 #home, #about, #contact, #projects {
   min-width: 100%;
   min-height: 100%;
@@ -88,7 +74,6 @@ p a:hover{
   max-width: 650px;
   text-align: justify;
 }
-
 #rabea_photo {
   background-image: url("images/rabea-sq-bw.jpg");
   background-position: center;
@@ -100,60 +85,48 @@ p a:hover{
   margin-top: 20px;
   border: 2px solid deeppink;
 }
-
 #rabea_photo:hover {
   background-image: url("images/rabea-look.jpg");
 }
-
 #contact {
   min-width: 100%;
   position: relative;
-/*  background-color: #f6f6f6;
-*/  min-height: 100%;
+  min-height: 100%;
 }
-
 .intro {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
 .social, #projects-flex, .about_content {
   margin: 0 auto;
-  display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  flex-wrap: wrap;
+  display: flex;
   -webkit-box-wrap: wrap;
   -ms-flexbox-wrap: wrap;
   -webkit-flex-wrap: wrap;
-
-  flex-flow: center;
+  flex-wrap: wrap;
   -webkit-box-flow: center;
   -ms-flexbox-flow: center;
   -webkit-flex-flow: center;
-
-
-  justify-content: center;
+  flex-flow: center;
   -webkit-justify-content: center;
   -ms-justify-content: center;
+  justify-content: center;
 }
-
 .wrapper {
   max-width: 90%;
   margin: 0 auto;
   margin-bottom: 50px;
 }
-
 #portfolio-wrapper {
   text-align: justify;
   max-width: 80%;
   margin: 0 auto;
-
 }
-
 .project-item {
   width: 430px;
   background-color: #f6f6f6;
@@ -161,12 +134,9 @@ p a:hover{
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .project-item h2 {
   text-align: center;
 }
-
-
 img#project-screenshot {
   max-width: 150px;
   min-width: 100px;
@@ -229,8 +199,6 @@ p.project-description {
   background-image: url("images/social/flickr-pink.png");
   cursor: pointer;
 }
-
-
 @media screen and (min-width:601px) {
   .project-image-intro {
     height:170px;
@@ -242,36 +210,34 @@ p.project-description {
     padding-left: 20px;
   }
 }
-
-
-
 @media only screen and (max-width:600px)  { 
-
   body {
     font-size: 16px;
   }
-
-h1 {
-  font-size: 2.3em;
-  line-height: 1.2em;
-}
-
+  h1 {
+    font-size: 2.3em;
+    line-height: 1.2em;
+  }
   .project-image-intro {
     height:220px;
   }
-    .urls {
-      display: block;
-    }
-
+  .urls {
+    display: block;
+  }
+  #rabea_photo {
+    background-size: 200px;
+    width:200px;
+    height:200px;
+    margin-left: none;
+    margin-right: none;
+  }
   img#project-screenshot {
     display:block;
     max-width: 120px;
     min-width: 100px;
     margin: 0 auto;
     margin-left: none;
-
   }
-
   .project-intro {
     clear:both;
     max-width: 350px;
@@ -288,37 +254,31 @@ h1 {
     font-size: 1.3em;
     line-height: 1em;
   }
-
-  #pink_ball {
-    width: 250px;
-    height: 250px;
-  }
-
   .about_text {
     padding-right: 0px;
   }
-
   #portfolio-wrapper {
     max-width: 100%;
   }
-
   h1 {
     font-size: 2.0em;
     line-height: 1em;
   }
-
-.project-intro {
-  max-width: 80%;
-  margin: 0 auto;
-}
-
+  .project-intro {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .about_content {
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
   #rabea_photo {
-   display: none;
+    display:none;
   }
   nav a:hover {
     color:black;
     border-bottom: none;
   }
-
 }
 
