@@ -46,26 +46,13 @@ p a:hover{
 .clearfix {
   clear:both;
 }
-#home, #about, #contact, #projects {
-  min-width: 100%;
-  min-height: 100%;
-  padding-top:60px;
-}
-#intro {
-  color:white;
-  margin: 0 auto;
-  width: 80%;
-  text-align: center;
-}
-#about {
-  position: relative;
-}
-#about_wrapper {
+.wrapper {
   max-width: 90%;
   margin: 0 auto;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
-#about_wrapper h1 {
+.about h1 {
   text-align: left;
   color: deeppink;
 }
@@ -75,7 +62,7 @@ p a:hover{
   text-align: justify;
 }
 #rabea_photo {
-  background-image: url("images/rabea-sq-bw.jpg");
+  background-image: url("images/rabea-look.jpg");
   background-position: center;
   background-size: 270px;
   width:270px;
@@ -84,17 +71,12 @@ p a:hover{
   margin-left: 20px;
   margin-top: 20px;
   border: 2px solid deeppink;
+  -webkit-transition:0.1s;
+          transition:0.1s;
 }
-#rabea_photo:hover {
-  background-image: url("images/rabea-look.jpg");
-}
-#contact {
-  min-width: 100%;
-  position: relative;
-  min-height: 100%;
-}
-.intro {
+.contact-text {
   margin: 0 auto;
+  width: 75%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -117,15 +99,8 @@ p a:hover{
   -ms-justify-content: center;
   justify-content: center;
 }
-.wrapper {
-  max-width: 90%;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-#portfolio-wrapper {
+.portfolio {
   text-align: justify;
-  max-width: 80%;
-  margin: 0 auto;
 }
 .project-item {
   width: 430px;
@@ -137,7 +112,7 @@ p a:hover{
 .project-item h2 {
   text-align: center;
 }
-img#project-screenshot {
+img.project-screenshot {
   max-width: 150px;
   min-width: 100px;
   border-radius: 100%;
@@ -165,6 +140,8 @@ p.project-description {
 }
 #twitter {
   background-image: url("images/social/twitter.png");
+  -webkit-transition:0.3s;
+          transition:0.3s;
 }
 #twitter:hover {
   background-image: url("images/social/twitter-pink.png");
@@ -172,6 +149,8 @@ p.project-description {
 }
 #instagram {
   background-image: url("images/social/instagram.png");
+  -webkit-transition:0.3s;
+          transition:0.3s;
 }
 #instagram:hover {
   background-image: url("images/social/instagram-pink.png");
@@ -180,6 +159,8 @@ p.project-description {
 
 #linkedin {
   background-image: url("images/social/linkedin.png");
+  -webkit-transition:0.3s;
+          transition:0.3s;
 }
 #linkedin:hover {
   background-image: url("images/social/linkedin-pink.png");
@@ -187,6 +168,8 @@ p.project-description {
 }
 #github {
   background-image: url("images/social/github.png");
+  -webkit-transition:0.3s;
+          transition:0.3s;
 }
 #github:hover {
   background-image: url("images/social/github-pink.png");
@@ -194,6 +177,8 @@ p.project-description {
 }
 #flickr {
   background-image: url("images/social/flickr.png");
+  -webkit-transition:0.3s;
+          transition:0.3s;
 }
 #flickr:hover {
   background-image: url("images/social/flickr-pink.png");
@@ -234,7 +219,7 @@ p.project-description {
     margin-left: none;
     margin-right: none;
   }
-  img#project-screenshot {
+  img.project-screenshot {
     display:block;
     max-width: 120px;
     min-width: 100px;
@@ -245,6 +230,13 @@ p.project-description {
     clear:both;
     max-width: 350px;
     text-align: center;
+  }
+  .contact-text {
+    width: 90%;
+    text-align: left;
+  }
+  .contact-text h1 {
+    margin-bottom: 0;
   }
   }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
@@ -257,7 +249,7 @@ p.project-description {
     font-size: 1.3em;
     line-height: 1em;
   }
-  #portfolio-wrapper {
+  .portfolio-wrapper {
     max-width: 100%;
   }
   h1 {
@@ -274,6 +266,7 @@ p.project-description {
      height:150px;
      margin-left: none;
      margin-right: none;
+     margin-bottom: 20px;
   }
   nav a:hover {
     color:black;

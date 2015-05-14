@@ -1,9 +1,7 @@
 
-Template.body.events({
-
+Template.projects.events({
   "click #read-more": function (event) {
   event.preventDefault();
-  console.log('works');
   var $this = $(event.target);
 
   $(".project-item.active").removeClass('active');
@@ -13,9 +11,7 @@ Template.body.events({
 
   toggleDescription();
   changeLinkText();
-
   }
-
 });
 
 function toggleDescription(){
@@ -32,9 +28,10 @@ function changeLinkText(){
   }
 }
 
-$(function(){
-        $(".typed-effect").typed({
-            strings: ["Hello, ^700 my name is Rabea..."],
-            typeSpeed: 0.2
-        });
-    });
+// Only run typed.js function after header is render (othewise it fires too soon)
+Template.header.rendered = function() {
+  $(".typed-effect").typed({
+      strings: ["Hello, ^700 my name is Rabea..."],
+      typeSpeed: 0.2
+  });
+}
