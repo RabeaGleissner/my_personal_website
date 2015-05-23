@@ -180,22 +180,43 @@
     });
     if ( flattenedArray.length >= 7) {
     
+    // identify position and colour of last coin placed
       console.log('gridArray', gridArray);
-      var index = gridArray.indexOf(col);
-      console.log('index', index);
-      var lastCoinIndex = gridArray[index].length - 1;
-      console.log('lastCoinIndex', lastCoinIndex);
-      var lastCoinPlaced = gridArray[index][lastCoinIndex];
+      var columnIndex = gridArray.indexOf(col);
+      console.log('columnIndex', columnIndex);
+      var rowIndex = gridArray[columnIndex].length - 1;
+      console.log('rowIndex', rowIndex);
+      var lastCoinPlaced = gridArray[columnIndex][rowIndex];
       console.log('lastCoinPlaced', lastCoinPlaced);
 
+      var winner = false;
 
-      // take last added coin and check up, down, left, right, diagonally if same coin is next to it.
-      // if yes, do the same check again until four are found
+      // check below lastCoinPlaced
+      if (rowIndex >= 3) {
+        if (lastCoinPlaced === gridArray[columnIndex][rowIndex-1] && lastCoinPlaced === gridArray[columnIndex][rowIndex-2] && lastCoinPlaced === gridArray[columnIndex][rowIndex-3]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check to the left of last coin
+      if (columnIndex >= 3) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex] && lastCoinPlaced === gridArray[columnIndex-2][rowIndex] && lastCoinPlaced === gridArray[columnIndex-3][rowIndex]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      
     }
   }
 
   function hideButton(columnArray, colNum){
     if ( columnArray.length >= 6 ) {
       $('.coin-selectors button:nth-child(' +colNum+ ')').addClass("disable");
+    }
+  }
+
+  function announceWinner(winner, lastCoinPlaced) {
+    if (winner === true ) {
+      $('.winnerText').append('<h3>We have a winner!</h3>' + lastCoinPlaced)
     }
   }
