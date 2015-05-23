@@ -1,0 +1,15 @@
+hr.footer {
+  border: 1px solid #ccc;
+}
+p.footer {
+  font-size: 0.8em;
+}
+.footer-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.contact-wrapper {
+  height: 70%;
+  min-height:70%;
+}
