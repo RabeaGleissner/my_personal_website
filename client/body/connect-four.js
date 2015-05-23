@@ -280,7 +280,7 @@
         }
       }
       // check one northwest and two southeast
-      if (columnIndex >= 2 && rowIndex >= 2 && rowIndex < 4 && columnIndex < 5) {
+      if (columnIndex >= 1 && rowIndex >= 2 && rowIndex < 4 && columnIndex < 5) {
         if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
           lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
           lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
@@ -289,7 +289,7 @@
         }
       }
       // check southeast
-      if (columnIndex >= 3 && rowIndex >= 3) {
+      if (columnIndex <= 4 && rowIndex >= 2) {
         if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
           lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
           lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
@@ -300,15 +300,14 @@
 
     }
   }
-
   function hideButton(columnArray, colNum){
     if ( columnArray.length >= 6 ) {
       $('.coin-selectors button:nth-child(' +colNum+ ')').addClass("disable");
     }
   }
-
   function announceWinner(winner, lastCoinPlaced) {
     if (winner === true ) {
-      $('.winnerText').html('<h3>We have a winner!</h3>' + lastCoinPlaced);
+      $('.winner-text').html('<section class="winner-announcement"><h3>And the winner is:</h3><p>---' + lastCoinPlaced + '---</p></section>');
+
     }
   }

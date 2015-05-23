@@ -17,15 +17,16 @@
   margin-bottom: 10px;
 }
 .coin-selectors button {
-  width: 48px;
-  margin: 1.5px;
-  height: 48px;
+  width: 47px;
+  margin: 1.9px;
+  height: 47px;
   border-radius: 100%;
   background-color: black;
-  border: 1px solid deeppink;
+  border: 2px solid deeppink;
   opacity: 0.2;
   -webkit-transition: opacity .5s ease-out;
           transition: opacity .5s ease-out;
+  outline: none;
 }
 .coin-selectors button:hover {
   opacity: 1;
@@ -47,4 +48,17 @@
 }
 .pink .coin{
   background-color: deeppink;
+}
+.winner-announcement {
+  width: 380px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid deeppink;
+}
+.winner-announcement h3 {
+  text-align: center;
+}
+.winner-announcement p {
+  text-align: center;
 }
