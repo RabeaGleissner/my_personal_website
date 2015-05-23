@@ -9,19 +9,32 @@
   width: 50px;
   height:50px;
 }
+.coin-selectors {
+  margin-bottom: 10px;
+}
 .coin-selectors button {
   width: 48px;
   margin: 1.5px;
   height: 48px;
   border-radius: 100%;
   background-color: black;
-  border: none;
-  opacity: 0.5;
+  border: 1px solid deeppink;
+  opacity: 0.2;
   -webkit-transition: opacity .5s ease-out;
           transition: opacity .5s ease-out;
 }
-
 .coin-selectors button:hover {
   opacity: 1;
-
+}
+.coin {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  border:none;
+}
+.black .coin{
+  background-color: black;
+}
+.pink .coin{
+  background-color: deeppink;
 }
