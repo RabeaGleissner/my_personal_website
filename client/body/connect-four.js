@@ -9,12 +9,12 @@
  var col5 = [];
  var col6 = [];
  var col7 = [];
+ var gridArray = [ col1, col2, col3, col4, col5, col6, col7 ];
  var num = 6;
 
    Template.connectFour.events({
      
   // Create game grid and buttons on click
-
    "click .new-game": function () {
     $('.new-game').hide();
     
@@ -57,75 +57,102 @@
    },
    // Methods to place a coin by clicking a button
    "click button.col1": function () {
-    col1.push('black');
+    addCoinToArray(col1, "black");
     placeCoin(1, "black filled");
+    checkIfWon(gridArray);
+    hideButton(col1, 1);
     computerPlay();
    },
    "click button.col2": function () {
-    col2.push('black');
+    addCoinToArray(col2, "black");
     placeCoin(2, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col2, 2);
    },
    "click button.col3": function () {
-    col3.push('black');
+    addCoinToArray(col3, "black");
     placeCoin(3, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col3, 3);
    },
    "click button.col4": function () {
-    col4.push('black');
+    addCoinToArray(col4, "black");
     placeCoin(4, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col4, 4);
+
    },
    "click button.col5": function () {
-    col5.push('black');
+    addCoinToArray(col5, "black");
     placeCoin(5, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col5, 5);
    },
    "click button.col6": function () {
-    col6.push('black');
+    addCoinToArray(col6, "black");
     placeCoin(6, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col6, 6);
    },
    "click button.col7": function () {
-    col6.push('black');
+    addCoinToArray(col7, "black");
     placeCoin(7, "black filled");
+    checkIfWon(gridArray);
     computerPlay();
+    hideButton(col7, 7);
    }
    });
 
  // Computer play function randomly selects a column to place a coin
   function computerPlay() {
     var column = Math.floor((Math.random() * 7) + 1);
+    
+    // placeCoin(column, "pink filled");
+
     switch (column) {
       case 1:
-        col1.push('pink');
-       placeCoin(1, "pink filled");
+        addCoinToArray(col1, "pink");
+        placeCoin(1, "pink filled");
+        hideButton(col1, 1);
         break;
       case 2:
-        col2.push('pink');
-         placeCoin(2, "pink filled");
+        addCoinToArray(col2, "pink");
+        placeCoin(2, "pink filled");
+        hideButton(col2, 2);
         break;
       case 3:
-        col3.push('pink');
+        addCoinToArray(col3, "pink");
         placeCoin(3, "pink filled");
+        hideButton(col3, 3);
         break;
       case 4:
-        col4.push('pink');
+        addCoinToArray(col4, "pink");
         placeCoin(4, "pink filled");
+        hideButton(col4, 4);
         break;
       case 5:
-        col5.push('pink');
+        addCoinToArray(col5, "pink");
         placeCoin(5, "pink filled");
+        hideButton(col5, 5);
         break;
       case 6:
-        col6.push('pink');
+        addCoinToArray(col6, "pink");
         placeCoin(6, "pink filled");
+        hideButton(col6, 6);
         break;
       case 7:
-        col7.push('pink');
+        addCoinToArray(col7, "pink");
         placeCoin(7, "pink filled");
+        hideButton(col7, 7);
         break;
     }
+    console.log('gridArray', gridArray);
+    checkIfWon(gridArray);
   }
 
   // Place coin function adds a coin in the correct column, checking from bottom up if space is already filled. If space is filled it checks one space above.
@@ -145,3 +172,27 @@
    }
   }
 
+  function addCoinToArray(col, colour) {
+    if ( col.length < 7) {
+      col.push(colour);
+    } else {
+      computerPlay();
+    }
+  }
+
+  function checkIfWon(gridArray){
+    var flattenedArray = $.map(gridArray, function(n){
+       return n;
+    });
+    if ( flattenedArray.length >= 7) {
+      console.log('run method check if won');
+    } else {
+      console.log('no one has one yet');
+    }
+  }
+
+  function hideButton(columnArray, colNum){
+    if ( columnArray.length >= 6 ) {
+      $('.coin-selectors button:nth-child(' +colNum+ ')').addClass("disable");
+    }
+  }

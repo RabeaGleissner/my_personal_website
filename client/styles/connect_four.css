@@ -26,6 +26,12 @@
 .coin-selectors button:hover {
   opacity: 1;
 }
+.coin-selectors button.disable  {
+  visibility: hidden;
+}
+.coin-selectors button.disable:hover {
+  visibility: hidden;
+}
 .coin {
   width: 48px;
   height: 48px;
