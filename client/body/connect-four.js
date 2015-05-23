@@ -229,8 +229,8 @@
       }
       // check southwest from the coin
       if (columnIndex >= 3 && rowIndex >= 3) {
-        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex-1] && 
-          lastCoinPlaced === gridArray[columnIndex-2][rowIndex-2] && 
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex-1] &&
+          lastCoinPlaced === gridArray[columnIndex-2][rowIndex-2] &&
           lastCoinPlaced === gridArray[columnIndex-3][rowIndex-3]) {
           winner = true;
           announceWinner(winner, lastCoinPlaced);
@@ -271,7 +271,7 @@
         }
       }
       // check two northwest and one southeast
-      if (columnIndex >= 2 && rowIndex >= 1 && rowIndex < 4) {
+      if (columnIndex >= 2 && columnIndex <=5 && rowIndex >= 1 && rowIndex < 4) {
         if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
           lastCoinPlaced === gridArray[columnIndex-2][rowIndex+2] &&
           lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
@@ -289,7 +289,7 @@
         }
       }
       // check southeast
-      if (columnIndex <= 4 && rowIndex >= 2) {
+      if (columnIndex <= 4 && columnIndex >=1 && rowIndex >= 2) {
         if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
           lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
           lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
