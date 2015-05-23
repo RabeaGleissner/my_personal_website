@@ -59,28 +59,24 @@
    "click button.col1": function () {
     addCoinToArray(col1, "black");
     placeCoin(1, "black filled");
-    checkIfWon(gridArray);
     hideButton(col1, 1);
     computerPlay();
    },
    "click button.col2": function () {
     addCoinToArray(col2, "black");
     placeCoin(2, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col2, 2);
    },
    "click button.col3": function () {
     addCoinToArray(col3, "black");
     placeCoin(3, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col3, 3);
    },
    "click button.col4": function () {
     addCoinToArray(col4, "black");
     placeCoin(4, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col4, 4);
 
@@ -88,21 +84,18 @@
    "click button.col5": function () {
     addCoinToArray(col5, "black");
     placeCoin(5, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col5, 5);
    },
    "click button.col6": function () {
     addCoinToArray(col6, "black");
     placeCoin(6, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col6, 6);
    },
    "click button.col7": function () {
     addCoinToArray(col7, "black");
     placeCoin(7, "black filled");
-    checkIfWon(gridArray);
     computerPlay();
     hideButton(col7, 7);
    }
@@ -151,8 +144,6 @@
         hideButton(col7, 7);
         break;
     }
-    console.log('gridArray', gridArray);
-    checkIfWon(gridArray);
   }
 
   // Place coin function adds a coin in the correct column, checking from bottom up if space is already filled. If space is filled it checks one space above.
@@ -177,17 +168,29 @@
       col.push(colour);
     } else {
       computerPlay();
+      //TODO: fix logic for computer trying to place a coin in a slot that is already in use.
     }
+
+    checkIfWon(gridArray, col);
   }
 
-  function checkIfWon(gridArray){
+  function checkIfWon(gridArray, col){
     var flattenedArray = $.map(gridArray, function(n){
        return n;
     });
     if ( flattenedArray.length >= 7) {
-      console.log('run method check if won');
-    } else {
-      console.log('no one has one yet');
+    
+      console.log('gridArray', gridArray);
+      var index = gridArray.indexOf(col);
+      console.log('index', index);
+      var lastCoinIndex = gridArray[index].length - 1;
+      console.log('lastCoinIndex', lastCoinIndex);
+      var lastCoinPlaced = gridArray[index][lastCoinIndex];
+      console.log('lastCoinPlaced', lastCoinPlaced);
+
+
+      // take last added coin and check up, down, left, right, diagonally if same coin is next to it.
+      // if yes, do the same check again until four are found
     }
   }
 
