@@ -76,6 +76,7 @@ p a:hover{
 }
 .contact-text {
   margin: 0 auto;
+  margin-bottom: 20px;
   width: 75%;
   justify-content: center;
   align-items: center;
@@ -122,13 +123,8 @@ img.project-screenshot {
 p.project-description {
   display:none;
 }
-
 .urls {
   text-align: center;
-}
-
-.social {
-  margin-top: 20px;
 }
 
 /*social media icons*/
