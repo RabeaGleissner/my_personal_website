@@ -7,16 +7,9 @@ p.footer {
 .footer-wrapper {
   max-width: 90%;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 .contact-wrapper {
   height: 70%;
   min-height:70%;
-}
-
-footer {
-  clear: both;
-  position: relative;
-  z-index: 10;
-  height: 1em;
-  margin-top: -10em;
 }
