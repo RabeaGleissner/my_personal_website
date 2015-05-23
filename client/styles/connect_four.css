@@ -1,6 +1,10 @@
 .new-game {
   margin-bottom: 20px;
 }
+.game-area {
+  width: 380px;
+  margin: 0 auto;
+}
 .connect-four-table tr {
    border: 1px solid gray;
 }

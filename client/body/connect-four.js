@@ -178,6 +178,7 @@
     var flattenedArray = $.map(gridArray, function(n){
        return n;
     });
+
     if ( flattenedArray.length >= 7) {
     
     // identify position and colour of last coin placed
@@ -205,7 +206,98 @@
           announceWinner(winner, lastCoinPlaced);
         }
       }
-      
+      // check two to the left and one to right
+      if (columnIndex >= 2 && columnIndex < 6) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex] && lastCoinPlaced === gridArray[columnIndex-2][rowIndex] && lastCoinPlaced === gridArray[columnIndex+1][rowIndex]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check one on the left and two on the right
+      if (columnIndex >= 1 && columnIndex < 5) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex] && lastCoinPlaced === gridArray[columnIndex+1][rowIndex] && lastCoinPlaced === gridArray[columnIndex+2][rowIndex]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check to the right
+      if (columnIndex >= 0 && columnIndex < 4) {
+        if (lastCoinPlaced === gridArray[columnIndex+1][rowIndex] && lastCoinPlaced === gridArray[columnIndex+2][rowIndex] && lastCoinPlaced === gridArray[columnIndex+3][rowIndex]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check southwest from the coin
+      if (columnIndex >= 3 && rowIndex >= 3) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex-1] && 
+          lastCoinPlaced === gridArray[columnIndex-2][rowIndex-2] && 
+          lastCoinPlaced === gridArray[columnIndex-3][rowIndex-3]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check two southwest from the coin and one northeast
+      if (columnIndex >= 2 && columnIndex < 6 && rowIndex >= 2 && rowIndex < 5) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex-1] && lastCoinPlaced === gridArray[columnIndex-2][rowIndex-2] && lastCoinPlaced === gridArray[columnIndex+1][rowIndex+1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check one southwest from the coin and two northeast
+      if (columnIndex >= 1 && columnIndex < 5 && rowIndex >= 1 && rowIndex < 4) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex-1] &&
+          lastCoinPlaced === gridArray[columnIndex+2][rowIndex+2] &&
+          lastCoinPlaced === gridArray[columnIndex+1][rowIndex+1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check northeast
+      if (columnIndex >= 0 && columnIndex < 4 && rowIndex >= 0 && rowIndex < 3) {
+        if (lastCoinPlaced === gridArray[columnIndex+3][rowIndex+3] &&
+          lastCoinPlaced === gridArray[columnIndex+2][rowIndex+2] &&
+          lastCoinPlaced === gridArray[columnIndex+1][rowIndex+1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check northwest
+      if (columnIndex >= 3 && rowIndex >= 2) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
+          lastCoinPlaced === gridArray[columnIndex-2][rowIndex+2] &&
+          lastCoinPlaced === gridArray[columnIndex-3][rowIndex+3]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check two northwest and one southeast
+      if (columnIndex >= 2 && rowIndex >= 1 && rowIndex < 4) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
+          lastCoinPlaced === gridArray[columnIndex-2][rowIndex+2] &&
+          lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check one northwest and two southeast
+      if (columnIndex >= 2 && rowIndex >= 2 && rowIndex < 4 && columnIndex < 5) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
+          lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
+          lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+      // check southeast
+      if (columnIndex >= 3 && rowIndex >= 3) {
+        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
+          lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
+          lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
+          winner = true;
+          announceWinner(winner, lastCoinPlaced);
+        }
+      }
+
     }
   }
 
@@ -217,6 +309,6 @@
 
   function announceWinner(winner, lastCoinPlaced) {
     if (winner === true ) {
-      $('.winnerText').append('<h3>We have a winner!</h3>' + lastCoinPlaced)
+      $('.winnerText').html('<h3>We have a winner!</h3>' + lastCoinPlaced);
     }
   }
