@@ -12,49 +12,46 @@
  var gridArray = [ col1, col2, col3, col4, col5, col6, col7 ];
  var num = 6;
 
-   Template.connectFour.events({
-     
-  // Create game grid and buttons on click
-   "click .new-game": function () {
-    $('.new-game').hide();
-    
-    for (var k = 1; k < 8; k++){
-    button = $(document.createElement('button'));
-    $(".coin-selectors").append(button);
-    }
+ // Create game grid and buttons on template render
+ Template.connectFour.rendered = function() {
+   for (var k = 1; k < 8; k++){
+   button = $(document.createElement('button'));
+   $(".coin-selectors").append(button);
+   }
 
-    for (var i = 1; i < 7; i++){
-       tr = $(document.createElement('tr'));
-       $(".connect-four-table").append(tr);
+   for (var i = 1; i < 7; i++){
+      tr = $(document.createElement('tr'));
+      $(".connect-four-table").append(tr);
 
-       for (var j = 1; j < 8; j++){
-       td = $(document.createElement('td'));
-       tr.append(td);
-       td.append('<div class="coin"></div>');
+      for (var j = 1; j < 8; j++){
+      td = $(document.createElement('td'));
+      tr.append(td);
+      td.append('<div class="coin"></div>');
+      }
+   }
+  $('.coin-selectors button:nth-child(1)').addClass('col1');
+  $('.coin-selectors button:nth-child(2)').addClass('col2');
+  $('.coin-selectors button:nth-child(3)').addClass('col3');
+  $('.coin-selectors button:nth-child(4)').addClass('col4');
+  $('.coin-selectors button:nth-child(5)').addClass('col5');
+  $('.coin-selectors button:nth-child(6)').addClass('col6');
+  $('.coin-selectors button:nth-child(7)').addClass('col7');
+  $('tr:nth-child(1)').addClass('row1');
+  $('tr:nth-child(2)').addClass('row2');
+  $('tr:nth-child(3)').addClass('row3');
+  $('tr:nth-child(4)').addClass('row4');
+  $('tr:nth-child(5)').addClass('row5');
+  $('tr:nth-child(6)').addClass('row6');
+  $('td:nth-child(1)').addClass('col1');
+  $('td:nth-child(2)').addClass('col2');
+  $('td:nth-child(3)').addClass('col3');
+  $('td:nth-child(4)').addClass('col4');
+  $('td:nth-child(5)').addClass('col5');
+  $('td:nth-child(6)').addClass('col6');
+  $('td:nth-child(7)').addClass('col7');
+  };
 
-       }
-    }
-   $('.coin-selectors button:nth-child(1)').addClass('col1');
-   $('.coin-selectors button:nth-child(2)').addClass('col2');
-   $('.coin-selectors button:nth-child(3)').addClass('col3');
-   $('.coin-selectors button:nth-child(4)').addClass('col4');
-   $('.coin-selectors button:nth-child(5)').addClass('col5');
-   $('.coin-selectors button:nth-child(6)').addClass('col6');
-   $('.coin-selectors button:nth-child(7)').addClass('col7');
-   $('tr:nth-child(1)').addClass('row1');
-   $('tr:nth-child(2)').addClass('row2');
-   $('tr:nth-child(3)').addClass('row3');
-   $('tr:nth-child(4)').addClass('row4');
-   $('tr:nth-child(5)').addClass('row5');
-   $('tr:nth-child(6)').addClass('row6');
-   $('td:nth-child(1)').addClass('col1');
-   $('td:nth-child(2)').addClass('col2');
-   $('td:nth-child(3)').addClass('col3');
-   $('td:nth-child(4)').addClass('col4');
-   $('td:nth-child(5)').addClass('col5');
-   $('td:nth-child(6)').addClass('col6');
-   $('td:nth-child(7)').addClass('col7');
-   },
+Template.connectFour.events({
    // Methods to place a coin by clicking a button
    "click button.col1": function () {
     addCoinToArray(col1, "black");
@@ -79,7 +76,6 @@
     placeCoin(4, "black filled");
     computerPlay();
     hideButton(col4, 4);
-
    },
    "click button.col5": function () {
     addCoinToArray(col5, "black");
@@ -98,6 +94,9 @@
     placeCoin(7, "black filled");
     computerPlay();
     hideButton(col7, 7);
+   },
+   "click button.refresh": function () {
+    location.reload();
    }
    });
 
@@ -170,7 +169,6 @@
       computerPlay();
       //TODO: fix logic for computer trying to place a coin in a slot that is already in use.
     }
-
     checkIfWon(gridArray, col);
   }
 
@@ -297,7 +295,6 @@
           announceWinner(winner, lastCoinPlaced);
         }
       }
-
     }
   }
   function hideButton(columnArray, colNum){
@@ -307,7 +304,7 @@
   }
   function announceWinner(winner, lastCoinPlaced) {
     if (winner === true ) {
-      $('.winner-text').html('<section class="winner-announcement"><h3>And the winner is:</h3><p>---' + lastCoinPlaced + '---</p></section>');
-
+      $('.winner-text').html('<section class="winner-announcement"><h3>And the winner is:</h3><p>- - ' + lastCoinPlaced + ' - -</p><button class="refresh">Play again!</button></section>');
+      $('.coin-selectors').hide();
     }
   }

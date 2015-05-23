@@ -2,8 +2,9 @@
   margin-bottom: 20px;
 }
 .game-area {
-  width: 380px;
+  width: 358px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 .connect-four-table tr {
    border: 1px solid gray;
@@ -25,7 +26,8 @@
   border: 2px solid deeppink;
   opacity: 0.2;
   -webkit-transition: opacity .5s ease-out;
-          transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
   outline: none;
 }
 .coin-selectors button:hover {
@@ -50,15 +52,20 @@
   background-color: deeppink;
 }
 .winner-announcement {
-  width: 380px;
+  width: 300px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid deeppink;
 }
-.winner-announcement h3 {
+.winner-announcement h3, .winner-announcement p, .winner-announcement button {
   text-align: center;
 }
-.winner-announcement p {
-  text-align: center;
+.connect-four-subtext {
+  width: 358px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.connect-four-subtext p {
+  line-height:0.5em;
 }

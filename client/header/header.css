@@ -21,6 +21,13 @@ nav li {
   padding-right: 15px; 
   float:left;
 }
+nav li:after {
+  content: '|';
+  padding-left: 10px;
+}
+nav li:last-child:after {
+  content: none;
+}
 nav a {
   text-decoration:none;
   color:black;
@@ -32,4 +39,8 @@ nav a:hover {
 nav a.active {
   color:black;
   border-bottom: 2px solid deeppink;
+}
+sup.new {
+  color: deeppink;
+  text-indent: 1.5em;
 }
