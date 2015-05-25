@@ -94,7 +94,7 @@ Template.connectFour.events({
    });
 
   function computerPlay() {
-    var count = {};
+   
     // check how many pink coins are in one column
     function countPinks(array){
       var count = 0;
@@ -103,6 +103,7 @@ Template.connectFour.events({
               count++;
       }
       return count;
+
     }
     // check how many black coins are in one column
     function countBlacks(array){
@@ -128,22 +129,23 @@ Template.connectFour.events({
     col5Blacks = countBlacks(col5);
     col6Blacks = countBlacks(col6);
     col7Blacks = countBlacks(col7);
+    console.log(col1Blacks, col2Blacks);
 
     // computer to place coin in column when there are three black coins and no pink coin
     // otherwise choose a random column
     if (col1Blacks === 3 && col1Pinks === 0) {
       column = 1;
-    } else if (col2Blacks ===3 && col2Pinks === 0) {
+    } else if (col2Blacks === 3 && col2Pinks === 0) {
       column = 2;
-    } else if (col3Blacks ===3 && col3Pinks === 0) {
+    } else if (col3Blacks === 3 && col3Pinks === 0) {
       column = 3;
-    } else if (col4Blacks ===3 && col4Pinks === 0) {
+    } else if (col4Blacks === 3 && col4Pinks === 0) {
       column = 4;
-    } else if (col5Blacks ===3 && col5Pinks === 0) {
+    } else if (col5Blacks === 3 && col5Pinks === 0) {
       column = 5;
-    } else if (col6Blacks ===3 && col6Pinks === 0) {
+    } else if (col6Blacks === 3 && col6Pinks === 0) {
       column = 6;
-    } else if (col7Blacks ===3 && col7Pinks === 0) {
+    } else if (col7Blacks === 3 && col7Pinks === 0) {
       column = 7;
     } else {
       column = Math.floor((Math.random() * 7) + 1);
@@ -184,7 +186,7 @@ Template.connectFour.events({
 
   function addCoinToArray(col, colour, tableColumn) {
     var columnLength = col.length;
-    var cssColumnLength = 6 - columnLength
+    var cssColumnLength = 6 - columnLength;
 
     if ( columnLength < 7) {
       col.push(colour);
@@ -204,13 +206,13 @@ Template.connectFour.events({
     if ( flattenedArray.length >= 7) {
     
     // identify position and colour of last coin placed
-      console.log('gridArray', gridArray);
+      // console.log('gridArray', gridArray);
       var columnIndex = gridArray.indexOf(col);
-      console.log('columnIndex', columnIndex);
+      // console.log('columnIndex', columnIndex);
       var rowIndex = gridArray[columnIndex].length - 1;
-      console.log('rowIndex', rowIndex);
+      // console.log('rowIndex', rowIndex);
       var lastCoinPlaced = gridArray[columnIndex][rowIndex];
-      console.log('lastCoinPlaced', lastCoinPlaced);
+      // console.log('lastCoinPlaced', lastCoinPlaced);
 
       var winner = false;
 
