@@ -54,44 +54,37 @@
 Template.connectFour.events({
    // Methods to place a coin by clicking a button
    "click button.col1": function () {
-    addCoinToArray(col1, "black");
-    placeCoin(1, "black filled");
+    addCoinToArray(col1, "black", 1);
     hideButton(col1, 1);
     computerPlay();
    },
    "click button.col2": function () {
-    addCoinToArray(col2, "black");
-    placeCoin(2, "black filled");
+    addCoinToArray(col2, "black", 2);
     computerPlay();
     hideButton(col2, 2);
    },
    "click button.col3": function () {
-    addCoinToArray(col3, "black");
-    placeCoin(3, "black filled");
+    addCoinToArray(col3, "black", 3);
     computerPlay();
     hideButton(col3, 3);
    },
    "click button.col4": function () {
-    addCoinToArray(col4, "black");
-    placeCoin(4, "black filled");
+    addCoinToArray(col4, "black", 4);
     computerPlay();
     hideButton(col4, 4);
    },
    "click button.col5": function () {
-    addCoinToArray(col5, "black");
-    placeCoin(5, "black filled");
+    addCoinToArray(col5, "black", 5);
     computerPlay();
     hideButton(col5, 5);
    },
    "click button.col6": function () {
-    addCoinToArray(col6, "black");
-    placeCoin(6, "black filled");
+    addCoinToArray(col6, "black", 6);
     computerPlay();
     hideButton(col6, 6);
    },
    "click button.col7": function () {
-    addCoinToArray(col7, "black");
-    placeCoin(7, "black filled");
+    addCoinToArray(col7, "black", 7);
     computerPlay();
     hideButton(col7, 7);
    },
@@ -103,68 +96,47 @@ Template.connectFour.events({
  // Computer play function randomly selects a column to place a coin
   function computerPlay() {
     var column = Math.floor((Math.random() * 7) + 1);
-    
-    // placeCoin(column, "pink filled");
 
     switch (column) {
       case 1:
-        addCoinToArray(col1, "pink");
-        placeCoin(1, "pink filled");
+        addCoinToArray(col1, "pink", 1);
         hideButton(col1, 1);
         break;
       case 2:
-        addCoinToArray(col2, "pink");
-        placeCoin(2, "pink filled");
+        addCoinToArray(col2, "pink", 2);
         hideButton(col2, 2);
         break;
       case 3:
-        addCoinToArray(col3, "pink");
-        placeCoin(3, "pink filled");
+        addCoinToArray(col3, "pink", 3);
         hideButton(col3, 3);
         break;
       case 4:
-        addCoinToArray(col4, "pink");
-        placeCoin(4, "pink filled");
+        addCoinToArray(col4, "pink", 4);
         hideButton(col4, 4);
         break;
       case 5:
-        addCoinToArray(col5, "pink");
-        placeCoin(5, "pink filled");
+        addCoinToArray(col5, "pink", 5);
         hideButton(col5, 5);
         break;
       case 6:
-        addCoinToArray(col6, "pink");
-        placeCoin(6, "pink filled");
+        addCoinToArray(col6, "pink", 6);
         hideButton(col6, 6);
         break;
       case 7:
-        addCoinToArray(col7, "pink");
-        placeCoin(7, "pink filled");
+        addCoinToArray(col7, "pink", 7);
         hideButton(col7, 7);
         break;
     }
   }
 
-  // Place coin function adds a coin in the correct column, checking from bottom up if space is already filled. If space is filled it checks one space above.
-  function placeCoin(col, colour) {
-   if ( !$('tr:nth-child(6) td:nth-child(' +col+ ')').hasClass("filled") ) {
-     $('tr:nth-child(6) td:nth-child(' +col+ ')').addClass(colour);
-   } else if ( !$('tr:nth-child(5) td:nth-child(' +col+ ')').hasClass("filled") ){
-     $('tr:nth-child(5) td:nth-child(' +col+ ')').addClass(colour);
-   } else if ( !$('tr:nth-child(4) td:nth-child(' +col+ ')').hasClass("filled") ){
-     $('tr:nth-child(4) td:nth-child(' +col+ ')').addClass(colour);
-   } else if ( !$('tr:nth-child(3) td:nth-child(' +col+ ')').hasClass("filled") ){
-     $('tr:nth-child(3) td:nth-child(' +col+ ')').addClass(colour);
-   } else if ( !$('tr:nth-child(2) td:nth-child(' +col+ ')').hasClass("filled") ){
-     $('tr:nth-child(2) td:nth-child(' +col+ ')').addClass(colour);
-   } else if ( !$('tr:nth-child(1) td:nth-child(' +col+ ')').hasClass("filled") ){
-     $('tr:nth-child(1) td:nth-child(' +col+ ')').addClass(colour);
-   }
-  }
+  function addCoinToArray(col, colour, tableColumn) {
+    var columnLength = col.length;
+    var cssColumnLength = 6 - columnLength
 
-  function addCoinToArray(col, colour) {
-    if ( col.length < 7) {
+    if ( columnLength < 7) {
       col.push(colour);
+      $('tr:nth-child(' +cssColumnLength+ ') td:nth-child(' +tableColumn+ ')').addClass(colour);
+
     } else {
       computerPlay();
       //TODO: fix logic for computer trying to place a coin in a slot that is already in use.
