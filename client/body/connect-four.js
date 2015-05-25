@@ -93,10 +93,63 @@ Template.connectFour.events({
    }
    });
 
- // Computer play function randomly selects a column to place a coin
   function computerPlay() {
-    var column = Math.floor((Math.random() * 7) + 1);
+    var count = {};
+    // check how many pink coins are in one column
+    function countPinks(array){
+      var count = 0;
+      for(var i = 0; i < array.length; ++i){
+          if(array[i] == "pink")
+              count++;
+      }
+      return count;
+    }
+    // check how many black coins are in one column
+    function countBlacks(array){
+      var count = 0;
+      for(var i = 0; i < array.length; ++i){
+          if(array[i] == "black")
+              count++;
+      }
+      return count;
+    }
+  
+    col1Pinks = countPinks(col1);
+    col2Pinks = countPinks(col2);
+    col3Pinks = countPinks(col3);
+    col4Pinks = countPinks(col4);
+    col5Pinks = countPinks(col5);
+    col6Pinks = countPinks(col6);
+    col7Pinks = countPinks(col7);
+    col1Blacks = countBlacks(col1);
+    col2Blacks = countBlacks(col2);
+    col3Blacks = countBlacks(col3);
+    col4Blacks = countBlacks(col4);
+    col5Blacks = countBlacks(col5);
+    col6Blacks = countBlacks(col6);
+    col7Blacks = countBlacks(col7);
 
+    // computer to place coin in column when there are three black coins and no pink coin
+    // otherwise choose a random column
+    if (col1Blacks === 3 && col1Pinks === 0) {
+      column = 1;
+    } else if (col2Blacks ===3 && col2Pinks === 0) {
+      column = 2;
+    } else if (col3Blacks ===3 && col3Pinks === 0) {
+      column = 3;
+    } else if (col4Blacks ===3 && col4Pinks === 0) {
+      column = 4;
+    } else if (col5Blacks ===3 && col5Pinks === 0) {
+      column = 5;
+    } else if (col6Blacks ===3 && col6Pinks === 0) {
+      column = 6;
+    } else if (col7Blacks ===3 && col7Pinks === 0) {
+      column = 7;
+    } else {
+      column = Math.floor((Math.random() * 7) + 1);
+    }
+
+    // computer adds coin to array
     switch (column) {
       case 1:
         addCoinToArray(col1, "pink", 1);
@@ -139,7 +192,6 @@ Template.connectFour.events({
 
     } else {
       computerPlay();
-      //TODO: fix logic for computer trying to place a coin in a slot that is already in use.
     }
     checkIfWon(gridArray, col);
   }

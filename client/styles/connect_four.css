@@ -1,10 +1,15 @@
 .new-game {
   margin-bottom: 20px;
 }
+
+.font-color-pink {
+  color: deeppink;
+}
 .game-area {
   width: 358px;
   margin: 0 auto;
   margin-top: 20px;
+  text-align: center;
 }
 .connect-four-table tr {
    border: 1px solid gray;
