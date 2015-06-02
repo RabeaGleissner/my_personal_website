@@ -49,6 +49,9 @@
   height: 48px;
   border-radius: 100%;
   border:none;
+  -webkit-transition: background-color .3s ease-in;
+  -moz-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in;
 }
 .black .coin{
   background-color: black;
