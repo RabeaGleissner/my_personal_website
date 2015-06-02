@@ -147,7 +147,15 @@ Template.connectFour.events({
       column = 6;
     } else if (col7Blacks === 3 && col7Pinks === 0) {
       column = 7;
-    } else {
+    } else if (col1[0] === col2[0] && col2[0] === col3[0] && col1[0] !== undefined) {
+      column = 4;
+    } else if (col5[0] === col6[0] && col6[0] === col7[0] && col7[0] !== undefined) {
+      column = 4;
+    } else if (col1[1] === col2[1] && col2[1] === col3[1] && col1[1] !== undefined) {
+      column = 4;
+    } else if (col5[1] === col6[1] && col6[1] === col7[1] && col7[1] !== undefined) {
+      column = 4;
+    }else {
       column = Math.floor((Math.random() * 7) + 1);
     }
 
