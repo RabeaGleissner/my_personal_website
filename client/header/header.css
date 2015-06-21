@@ -20,7 +20,7 @@ nav h3 {
 }
 nav li {
   display: inline-block;
-  line-height: 30px;
+  line-height: 60px;
   height: 60px;
   cursor:pointer;
 }

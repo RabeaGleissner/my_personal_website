@@ -13,8 +13,11 @@ $(function() {
 
     $window.resize(function resize(){
         if ($window.width() < 600) {
+            $('nav li').css('display', 'none');
             return $body.addClass('small-screen');
-        }
-        $body.removeClass('small-screen');
+        } else {
+           $('nav li').css('display', 'inline-block');
+           $body.removeClass('small-screen');
+        }  
     }).trigger('resize');
 });
