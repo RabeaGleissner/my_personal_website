@@ -1,28 +1,26 @@
 <template  name="projects">
-  {{> header}}
-    <div class="wrapper">
-      <div class="portfolio wrapper">
-        <h1>My projects</h1>
-        <p>Here is a selection of projects I created since I started the Web Development Immersive bootcamp back in November 2014. </p>
-        <p>Please bear in mind that some of the projects were created during my very early days of coding, so they might not work perfectly. Also, most of them are only tested in Google Chrome, so I take no responsibility for any kinds of explosions in other browsers!</p>
-        <p>If you're interested in seeing more of my code, check my <a href="https://github.com/RabeaGleissner" target="_blank">Github account</a>.</p>
-      </div>
-      <div id="projects-flex">
-        {{#each projects}}
-          <article class="project-item">
-            <h2>{{title}}</h2>
-            <div class="project-image-intro clearfix">
-              <img class="project-screenshot" src="{{image}}" alt="Screenshot of project">
-              <span class="project-intro">
-                <p>{{intro}}</p>
-                <p><a href="#" id="read-more">Read more</a></p>
-             </span>
-            </div>
-            <p class="urls"><a href="{{heroku}}"  target="_blank">Live website</a> | <a href="{{github}}" target="_blank">Code on Github</a></p>                 
-            <p class="project-description ">{{description}}</p>
-          </article>
-        {{/each}}
-      </div>
+  <div class="wrapper">
+    <div class="portfolio wrapper">
+      <h1>My projects</h1>
+      <p>Here is a selection of projects I created since I started the Web Development Immersive bootcamp back in November 2014. </p>
+      <p>Please bear in mind that some of the projects were created during my very early days of coding, so they might not work perfectly. Also, most of them are only tested in Google Chrome, so I take no responsibility for any kinds of explosions in other browsers!</p>
+      <p>If you're interested in seeing more of my code, check my <a href="https://github.com/RabeaGleissner" target="_blank">Github account</a>.</p>
     </div>
-    {{> footer}}
+    <div id="projects-flex">
+      {{#each projects}}
+        <article class="project-item">
+          <h2>{{title}}</h2>
+          <div class="project-image-intro clearfix">
+            <img class="project-screenshot" src="{{image}}" alt="Screenshot of project">
+            <span class="project-intro">
+              <p>{{intro}}</p>
+              <p><a href="#" id="read-more">Read more</a></p>
+           </span>
+          </div>
+          <p class="urls"><a href="{{heroku}}"  target="_blank">Live website</a> | <a href="{{github}}" target="_blank">Code on Github</a></p>                 
+          <p class="project-description ">{{description}}</p>
+        </article>
+      {{/each}}
+    </div>
+  </div>
 </template>
