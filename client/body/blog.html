@@ -4,12 +4,12 @@
       <div class="blog-content ">
         {{#each blog}}
           <div class="blog-post">
-            <h2><a href="#">{{title}}</a></h2>
+            <h2><a href="/blog/{{titleFriendly}}">{{title}}</a></h2>
             <p class="publish-date">18 June 2015</p>
             <p>{{intro}}</p>
-            <p><a href="#">Read more</a></p>
+            <p><a href="/blog/{{titleFriendly}}">Read more</a></p>
           </div>
         {{/each}}
-    </div> <!-- closing about_content class -->
+    </div>
   </div>
 </template>
