@@ -2,8 +2,8 @@ Template.header.events({
   "click ul.navigation": function () {
     $('.small-screen nav li').slideToggle();
   },
-  "touchend ul.navigation": function () {
-    $('.small-screen nav li').slideToggle();
+  "touchstart ul.navigation": function () {
+    $('.small-screen nav li').show('slow');
   }
 });
 
@@ -18,6 +18,6 @@ $(function() {
         } else {
            $('nav li').css('display', 'inline-block');
            $body.removeClass('small-screen');
-        }  
+        }
     }).trigger('resize');
 });

@@ -1,8 +1,10 @@
 <template name="article">
-  <div class=" wrapper" >
+  <article class=" wrapper article" >
     <h1>{{title}}</h1>
       <div class="article-content ">
+        <p class="publish-date">{{publishDate}}</p>
        {{{body}}}
+       <p class="all-posts-link"><a href="{{ pathFor 'blog' }}">See all blog posts</a></p>
     </div> 
-  </div>
+  </article>
 </template>
