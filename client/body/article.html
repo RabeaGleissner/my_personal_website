@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
       <div class="article-content ">
         <p class="publish-date">{{publishDate}}</p>
-       {{{body}}}
+        {{> Template.dynamic template=partial }}
        <p class="all-posts-link"><a href="{{ pathFor 'blog' }}">See all blog posts</a></p>
     </div> 
   </article>
