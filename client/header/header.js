@@ -1,15 +1,22 @@
 Template.header.events({
-  "click ul.navigation": function () {
-    $('.small-screen nav li').slideToggle();
-  },
-  "touchstart ul.navigation": function () {
-    $('.small-screen nav li').show('slow');
+  "click nav button": function (ev) {
+    ev.preventDefault();
+    $('nav li').show('slow');
+  }, 
+  "click nav li": function () {
+    $('.small-screen nav li').hide('slow');
   }
 });
+
+
 
 $(function() {
     var $window = $(window),
         $body = $('body');
+
+   if( navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i) ) {
+      return $body.addClass('small-screen');
+   }
 
     $window.resize(function resize(){
         if ($window.width() < 600) {
