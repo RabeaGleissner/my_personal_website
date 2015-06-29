@@ -19,7 +19,11 @@
    button = $(document.createElement('button'));
    $(".coin-selectors").append(button);
    }
-
+   //adding class to button to then attach click event
+   for (var c = 1; c < 8;){
+    $('button:nth-child('+c+')').addClass(""+c+"");
+    c++
+   }
    for (var i = 1; i < 7; i++){
       tr = $(document.createElement('tr'));
       $(".connect-four-table").append(tr);
@@ -30,13 +34,7 @@
       td.append('<div class="coin"></div>');
       }
    }
-  $('.coin-selectors button:nth-child(1)').addClass('col1');
-  $('.coin-selectors button:nth-child(2)').addClass('col2');
-  $('.coin-selectors button:nth-child(3)').addClass('col3');
-  $('.coin-selectors button:nth-child(4)').addClass('col4');
-  $('.coin-selectors button:nth-child(5)').addClass('col5');
-  $('.coin-selectors button:nth-child(6)').addClass('col6');
-  $('.coin-selectors button:nth-child(7)').addClass('col7');
+
   $('tr:nth-child(1)').addClass('row1');
   $('tr:nth-child(2)').addClass('row2');
   $('tr:nth-child(3)').addClass('row3');
@@ -54,37 +52,37 @@
 
 Template.connectFour.events({
    // Methods to place a coin by clicking a button
-   "click button.col1": function () {
+   "click button.1": function () {
     addCoinToArray(col1, "black", 1);
     hideButton(col1, 1);
     computerPlay();
    },
-   "click button.col2": function () {
+   "click button.2": function () {
     addCoinToArray(col2, "black", 2);
     computerPlay();
     hideButton(col2, 2);
    },
-   "click button.col3": function () {
+   "click button.3": function () {
     addCoinToArray(col3, "black", 3);
     computerPlay();
     hideButton(col3, 3);
    },
-   "click button.col4": function () {
+   "click button.4": function () {
     addCoinToArray(col4, "black", 4);
     computerPlay();
     hideButton(col4, 4);
    },
-   "click button.col5": function () {
+   "click button.5": function () {
     addCoinToArray(col5, "black", 5);
     computerPlay();
     hideButton(col5, 5);
    },
-   "click button.col6": function () {
+   "click button.6": function () {
     addCoinToArray(col6, "black", 6);
     computerPlay();
     hideButton(col6, 6);
    },
-   "click button.col7": function () {
+   "click button.7": function () {
     addCoinToArray(col7, "black", 7);
     computerPlay();
     hideButton(col7, 7);
@@ -156,7 +154,7 @@ Template.connectFour.events({
     } else if (col5[1] === col6[1] && col6[1] === col7[1] && col7[1] !== undefined && col4.length < 5) {
       column = 4;
     }else {
-      column = Math.floor((Math.random() * 3) + 1);
+      column = Math.floor((Math.random() * 7) + 1);
     }
 
 
