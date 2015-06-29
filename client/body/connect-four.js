@@ -11,6 +11,7 @@
  var col7 = [];
  var gridArray = [ col1, col2, col3, col4, col5, col6, col7 ];
  var num = 6;
+ var winner = false;
 
  // Create game grid and buttons on template render
  Template.connectFour.rendered = function() {
@@ -129,7 +130,6 @@ Template.connectFour.events({
     col5Blacks = countBlacks(col5);
     col6Blacks = countBlacks(col6);
     col7Blacks = countBlacks(col7);
-    console.log(col1Blacks, col2Blacks);
 
     // computer to place coin in column when there are three black coins and no pink coin
     // otherwise choose a random column
@@ -156,39 +156,42 @@ Template.connectFour.events({
     } else if (col5[1] === col6[1] && col6[1] === col7[1] && col7[1] !== undefined && col4.length < 5) {
       column = 4;
     }else {
-      column = Math.floor((Math.random() * 7) + 1);
+      column = Math.floor((Math.random() * 3) + 1);
     }
 
-    // computer adds coin to array
-    switch (column) {
-      case 1:
-        addCoinToArray(col1, "pink", 1);
-        hideButton(col1, 1);
-        break;
-      case 2:
-        addCoinToArray(col2, "pink", 2);
-        hideButton(col2, 2);
-        break;
-      case 3:
-        addCoinToArray(col3, "pink", 3);
-        hideButton(col3, 3);
-        break;
-      case 4:
-        addCoinToArray(col4, "pink", 4);
-        hideButton(col4, 4);
-        break;
-      case 5:
-        addCoinToArray(col5, "pink", 5);
-        hideButton(col5, 5);
-        break;
-      case 6:
-        addCoinToArray(col6, "pink", 6);
-        hideButton(col6, 6);
-        break;
-      case 7:
-        addCoinToArray(col7, "pink", 7);
-        hideButton(col7, 7);
-        break;
+
+    // computer adds coin to array if there is no winner
+    if (winner === false) {
+      switch (column) {
+        case 1:
+          addCoinToArray(col1, "pink", 1);
+          hideButton(col1, 1);
+          break;
+        case 2:
+          addCoinToArray(col2, "pink", 2);
+          hideButton(col2, 2);
+          break;
+        case 3:
+          addCoinToArray(col3, "pink", 3);
+          hideButton(col3, 3);
+          break;
+        case 4:
+          addCoinToArray(col4, "pink", 4);
+          hideButton(col4, 4);
+          break;
+        case 5:
+          addCoinToArray(col5, "pink", 5);
+          hideButton(col5, 5);
+          break;
+        case 6:
+          addCoinToArray(col6, "pink", 6);
+          hideButton(col6, 6);
+          break;
+        case 7:
+          addCoinToArray(col7, "pink", 7);
+          hideButton(col7, 7);
+          break;
+      }
     }
   }
 
@@ -214,15 +217,9 @@ Template.connectFour.events({
     if ( flattenedArray.length >= 7) {
     
     // identify position and colour of last coin placed
-      // console.log('gridArray', gridArray);
       var columnIndex = gridArray.indexOf(col);
-      // console.log('columnIndex', columnIndex);
       var rowIndex = gridArray[columnIndex].length - 1;
-      // console.log('rowIndex', rowIndex);
       var lastCoinPlaced = gridArray[columnIndex][rowIndex];
-      // console.log('lastCoinPlaced', lastCoinPlaced);
-
-      var winner = false;
 
       // check below lastCoinPlaced
       if (rowIndex >= 3) {
@@ -294,7 +291,7 @@ Template.connectFour.events({
         }
       }
       // check northwest
-      if (columnIndex >= 3 && rowIndex >= 2) {
+      if (columnIndex >= 3 && rowIndex <= 2) {
         if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
           lastCoinPlaced === gridArray[columnIndex-2][rowIndex+2] &&
           lastCoinPlaced === gridArray[columnIndex-3][rowIndex+3]) {
@@ -321,10 +318,10 @@ Template.connectFour.events({
         }
       }
       // check southeast
-      if (columnIndex <= 4 && columnIndex >=1 && rowIndex >= 2) {
-        if (lastCoinPlaced === gridArray[columnIndex-1][rowIndex+1] &&
+      if (columnIndex <= 3 && rowIndex >= 3) {
+        if (lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1] &&
           lastCoinPlaced === gridArray[columnIndex+2][rowIndex-2] &&
-          lastCoinPlaced === gridArray[columnIndex+1][rowIndex-1]) {
+          lastCoinPlaced === gridArray[columnIndex+3][rowIndex-3]) {
           winner = true;
           announceWinner(winner, lastCoinPlaced);
         }
